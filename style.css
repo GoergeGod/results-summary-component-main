@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
 
-:root{
+:root {
     --Light_red: hsl(0, 100%, 67%);
+    --Back_red: hsl(0, 100%, 98%);
     --Orangey_yellow: hsl(39, 100%, 56%);
+    --Back_yellow: hsl(39, 100%, 98%);
     --Green_teal: hsl(166, 100%, 37%);
+    --Back_teal: hsl(166, 100%, 98%);
     --Cobalt_blue: hsl(234, 85%, 45%);
+    --Back_blue: hsl(234, 85%, 98%);
 
 
     --Light_slate_blue_background: hsl(252, 100%, 67%);
@@ -21,105 +25,197 @@
     --Tipografia: "Hanken Grotesk", sans-serif;
 }
 
-html{
+html {
     box-sizing: border-box;
     font-size: 62.5%;
 }
 
 *,
 ::before,
-::after{
+::after {
     box-sizing: inherit;
 }
 
-body{
+body {
     font-size: 1.8rem;
     font-family: var(--Tipografia);
     background-color: var(--White);
 }
 
-.contenedor{
-    max-width: 90%;
-    height: aut0;
-}
 
-.no-margin{
+.no-margin {
     margin: 0;
 }
 
-.no-padding{
+.no-padding {
     padding: 0;
 }
 
-.contenedor-principal{
+.contenedor-principal {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
     width: 70rem;
     height: auto;
-    max-width: 95%;
     margin: 16rem auto;
 }
 
-.contendor-result{
-    background-color: var(--Light_slate_blue_background);
+.contendor-result {
+    width: 100%;
+    background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
     border-radius: 2rem;
     color: var(--White);
     text-align: center;
 }
 
-.contendor-result h3{
+.contendor-result h3 {
     margin: 4rem;
     color: var(--Light_lavender);
 }
 
-.contendor-result span{
+.contendor-result span {
     font-size: 6rem;
     font-weight: 800;
 }
 
-.numeros{
+@media(min-width: 1440px){
+    .contenedor-principal {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.numeros {
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin: auto;
     width: 20rem;
     height: 20rem;
-    background-color: var(--Light_royal_blue_background);
+    background: linear-gradient(to bottom, hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
     border-radius: 100%;
     padding: 0;
 }
 
-.numeros p:last-of-type{
+.numeros p:last-of-type {
     color: var(--Light_lavender);
     font-weight: 500;
 }
 
-.great{
+.great {
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 1rem;
 }
 
-.ultimo{
+.ultimo {
+    display: flex;
     font-size: 1.8rem;
-    margin: 0 4rem 4rem 4rem;
+    margin: 5rem;
+    margin-top: 0;
     color: var(--Light_lavender);
 }
 
-.contenedor-summary{
+.contenedor-summary {
+    width: 100%;
+    background-color: white;
+    border: 1rem;
     border-radius: 2rem;
-    box-shadow: 0 1rem 1rem rgba(1, 3, 2, 0.4);
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
 }
 
-.contenido-summary{
+.contenido-summary {
     margin: 3rem;
     max-width: 90%;
 }
 
+
 .reaction,
 .memory,
 .verbal,
-.visual{
+.visual {
     background-color: var(--Light_red);
     border-radius: 1rem;
+    margin: 0 2rem;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+    padding: 0.2rem;
+}
+
+.contenido {
+    margin-left: 1rem;
+  
+}
+
+.texto {
+    margin-right: 2rem;
+}
+
+svg {
+    margin: 0 1rem;
+    vertical-align: middle;
+
+}
+
+h4 {
+    margin: 0;
+}
+
+.reaction h4{
+    color: var(--Light_red);
+}
+
+.reaction {
+    margin-top: 3rem;
+    background-color: var(--Back_red);
+}
+.memory h4{
+    color: var(--Orangey_yellow);
+}
+
+.memory {
+    background-color: var(--Back_yellow);
+}
+
+.verbal h4{
+    color: var(--Green_teal);
+}
+
+.verbal {
+    background-color: var(--Back_teal);
+}
+.visual h4{
+    color: var(--Cobalt_blue);
+}
+
+.visual {
+    background-color: var(--Back_blue);
+}
+
+.boton {
+    font-weight: bold;
+    border: none;
+    border-radius: 2rem;
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+    width: 95%;
+    color: var(--White);
+    background-color: var(--Dark_gray_blue);
+    cursor: pointer;
+}
+
+.contenido-summary p {
+    color: var(--Light_lavender);
+    font-weight: bold;
+}
+
+
+.contenido-summary span {
+    color: var(--Dark_gray_blue);
+    font-weight: bold;
 }
